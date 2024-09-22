@@ -25,8 +25,8 @@ const Dashboardnavbar = () => {
   const [menu, setmenu] = useState(false);
   const [notify, setnotify] = useState(false);
   const params = usePathname();
-const [pageload,setpageload]=useState(true)
-const [isScrolling, setIsScrolling] = useState(false);
+  const [pageload, setpageload] = useState(true)
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const [isactive, setactive] = useState(0);
   useEffect(() => {
@@ -35,7 +35,7 @@ const [isScrolling, setIsScrolling] = useState(false);
     const handleScroll = () => {
       //console.log(isScrolling)
       const currentScrollPos = window.pageYOffset;
-      setIsScrolling(currentScrollPos > prevScrollPos && currentScrollPos >100);
+      setIsScrolling(currentScrollPos > prevScrollPos && currentScrollPos > 100);
       prevScrollPos = currentScrollPos;
     };
 
@@ -50,29 +50,29 @@ const [isScrolling, setIsScrolling] = useState(false);
       setactive(4);
     }
   }, []);
-  useEffect(()=>{
-    const token=getToken()
-    if(user){
+  useEffect(() => {
+    const token = getToken()
+    if (user) {
       setpageload(false)
     }
-    if(!user && !token){
+    if (!user && !token) {
       route.push("/")
     }
-  },[user])
-  if(pageload){
+  }, [user])
+  if (pageload) {
 
     return (
-      <div className={clsx(" sticky top-0 flex flex-col duration-300  z-[200] pt-2 lg:pt-0 bg-[#FBFBFB]",isScrolling?" translate-y-[-100%]":" translate-y-0")}>
+      <div className={clsx(" sticky top-0 flex flex-col duration-300  z-[200] pt-2 lg:pt-0 bg-[#FBFBFB]", isScrolling ? " translate-y-[-100%]" : " translate-y-0")}>
         <div className="bg-[#FBFBFB] w-full z-[99]">
           <div className="flex px-[1rem] md:px-[2rem] lg:px-[3rem] py-2 justify-between border-b-[1px] border-[#D5D9DE]">
             <div className="flex items-center gap-10  font-Matter  font-medium text-[1.25rem] py-2">
-            <Logo />
-             
+              <Logo />
+
             </div>
             <div className="lg:flex items-center hidden gap-4">
-                <Skeleton className="h-[50px]  bg-black/10 w-[230px] rounded-full" />
-  
-           
+              <Skeleton className="h-[50px]  bg-black/10 w-[230px] rounded-full" />
+
+
             </div>
           </div>
           <div className={clsx("px-[1rem] flex justify-between  md:px-[2rem] lg:px-[3rem] w-full  border-b-[1px] border-b-[#E0E4E9] py-4", params.includes("chat") ? "hidden" : "lg:hidden")}>
@@ -88,16 +88,16 @@ const [isScrolling, setIsScrolling] = useState(false);
                 <Skeleton key={index} className="h-[1.5rem] w-[5rem] rounded-xl  bg-black/10" />
               ))}
             </div>
-          
+
           </div>
         </div>
-        
-       
+
+
       </div>
     );
   }
   return (
-    <div className={clsx(" sticky top-0 flex flex-col z-[200] duration-300  pt-2 lg:pt-0 bg-[#FBFBFB]",isScrolling?" translate-y-[-100%]":" translate-y-0")}>
+    <div className={clsx(" sticky top-0 flex flex-col z-[200] duration-300  pt-2 lg:pt-0 bg-[#FBFBFB]", isScrolling ? " translate-y-[-100%]" : " translate-y-0")}>
       <motion.div
         className={clsx(
           " h-[100svh] w-[100vw] z-[100] bg-[#00000025]    ",
@@ -106,20 +106,19 @@ const [isScrolling, setIsScrolling] = useState(false);
       ></motion.div>
       <div className="  bg-[#FBFBFB] w-full z-[99]">
         <div
-          className={`flex  px-[1rem] md:px-[2rem] lg:px-[3rem] py-2 justify-between ${
-            menu ? " bg-white " : "border-b-[1px]"
-          }  border-[#D5D9DE]`}
+          className={`flex  px-[1rem] md:px-[2rem] lg:px-[3rem] py-2 justify-between ${menu ? " bg-white " : "border-b-[1px]"
+            }  border-[#D5D9DE]`}
         >
           <div className=" flex items-center gap-10   font-Matter  font-medium text-[1.25rem]   ">
             <Logo />
-           
+
           </div>
           <div className=" flex items-center gap-4 ">
             <Profilebar />
-          
+
           </div>
         </div>
-        
+
         <div className=" px-[1rem] md:px-[2rem] lg:px-[3rem]     font-Matter  font-medium border-b border-b-[#E4EAF0] text-[#62676D] hidden md:flex justify-between ">
           <div className=" flex gap-10">
             <Link href={"/dashboard"}>
@@ -156,7 +155,7 @@ const [isScrolling, setIsScrolling] = useState(false);
                 )}
               </div>
             </Link>
-          
+
             <Link href={"/dashboard/influncer"}>
               <div
                 onClick={() => setactive(3)}
@@ -174,14 +173,14 @@ const [isScrolling, setIsScrolling] = useState(false);
                 )}
               </div>
             </Link>
-            
+
           </div>
-         
+
         </div>
       </div>
 
- 
-      
+
+
     </div>
   );
 };
