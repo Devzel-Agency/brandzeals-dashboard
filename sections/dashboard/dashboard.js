@@ -1,6 +1,7 @@
 "use client"
 import getDashboarddata from '@/api/getDashboardData'
 import Dashcard from '@/components/dashcard'
+import Graph from '@/components/graph'
 import Padding from '@/components/padding'
 import React, { useEffect, useState } from 'react'
 
@@ -19,7 +20,7 @@ const Dashboard = () => {
         getdata()
     },[])
     return (
-        <div className=' py-10 '>
+        <div className=' py-10  bg-[#FBFBFB]'>
             <Padding>
                 <div className=' lg:flex  gap-5 ' >
                     <div className=' grid gap-5 lg:w-[45%] xl:w-[35%] '>
@@ -27,7 +28,7 @@ const Dashboard = () => {
                         <Dashcard heading={"Total Brands"} no={data?.onboardbrands} tag={"Brands onboarded"}  />
                     </div>
                     <div className=' lg:w-[55%] xl:w-[65%] '>
-                        Graph
+                     <Graph/>
                     </div>
                 </div>
                 <div>
