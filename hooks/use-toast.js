@@ -145,10 +145,18 @@ function useToast() {
     };
   }, [state])
 
+  const dismissToast = (toastId) => {
+    dispatch({ type: "DISMISS_TOAST", toastId });
+  };
+
+  const handleToastClick = (toastId) => {
+    dismissToast(toastId);
+  };
   return {
     ...state,
     toast,
-    dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId }),
+    dismiss: dismissToast,
+    handleToastClick,
   };
 }
 

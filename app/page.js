@@ -1,9 +1,12 @@
-import Signin from '@/sections/login'
+import UserProvider from './UserProvider'
+import Login from '@/sections/login/login'
 import React from 'react'
 
 const Page = () => {
   return (
-    <div><Signin/></div>
+    <div>
+      <Login/>
+    </div>
   )
 }
 
