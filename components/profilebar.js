@@ -38,11 +38,11 @@ const Profilebar = () => {
             {/* <Image src={img} className=" object-cover h-full w-full " /> */}
           </div>
           <div className=" h-full transition-all duration-300 flex flex-col gap-1 justify-between  ">
-            <div className=" font-Helvatica tracking-tight text-[1rem] text-[#000000] leading-none   ">
-              {user? user.fullname :<Skeleton  className={" h-3 w-20"}/>}
+            <div className="  font-Matter font-medium tracking-tight text-[1rem] text-[#000000] leading-none   ">
+              {user? user.name :<Skeleton  className={" h-3 w-20"}/>}
              
             </div>
-            <div className=" font-Helvatica tracking-tight text-[0.9rem] text-[#868C92] leading-none   ">
+            <div className="  font-Matter font-medium tracking-tight text-[0.9rem] text-[#868C92] leading-none   ">
             {user? user.email :<Skeleton  className={" h-3 w-40"}/>}
             </div>
           </div>

@@ -7,7 +7,7 @@ const getuser = async () => {
     authorization: `Bearer ${token}`,
   };
   try {
-    const response = await axiosInstance.get("/admin/getuser", {
+    const response = await axiosInstance.get("/admin/getAdmin", {
       headers,
     });
 
