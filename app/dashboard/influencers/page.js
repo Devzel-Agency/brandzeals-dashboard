@@ -1,10 +1,10 @@
-import Brands from "@/sections/dashboard/brands";
+import Influencers from "@/sections/dashboard/influencers";
 import React from "react";
 
 const Page = () => {
   return (
     <div>
-      <Brands />
+      <Influencers />
     </div>
   );
 };

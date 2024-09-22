@@ -3,6 +3,7 @@ import getDashboarddata from "@/api/getDashboardData";
 import Dashcard from "@/components/dashcard";
 import Graph from "@/components/graph";
 import Padding from "@/components/padding";
+import SingleBrand from "@/components/SingleBrand";
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 
@@ -48,27 +49,25 @@ const Dashboard = () => {
             </div>
           </div>
           <div className=" bg-[#FFFFFF]  border-[#F1F1F1] border rounded-xl ">
-            <div className=" font-Matter font-medium grid grid-cols-6 gap-6 px-5 py-3.5 ">
+            <div className=" font-Matter font-medium grid grid-cols-5 gap-6 px-5 py-3.5 ">
               <div>S.No</div>
               <div>Name</div>
               <div>Email</div>
-              <div>Brand Name</div>
               <div>Phone Number</div>
               <div>Date</div>
             </div>
             {data?.recentbrands?.map((brand, idx) => (
               <div
                 className={clsx(
-                  "  grid grid-cols-6 font-Matter gap-6 px-5 py-3.5 ",
+                  "  grid grid-cols-5 font-Matter gap-6 px-5 py-3.5 ",
                   idx % 2 == 0 ? "bg-[#F9FAFB]" : " bg-white "
                 )}
               >
                 <div>{idx + 1}</div>
-                <div>{brand?.name}</div>
+                <div>{brand?.brand}</div>
                 <div className=" w-full truncate  lowercase">
                   {brand?.email}
                 </div>
-                <div>{brand?.brand}</div>
                 <div>{brand?.phone}</div>
                 <div>{brand?.createdAt}</div>
               </div>
@@ -83,18 +82,18 @@ const Dashboard = () => {
             </div>
           </div>
           <div className=" bg-[#FFFFFF]  border-[#F1F1F1] border rounded-xl ">
-            <div className=" font-Matter font-medium grid grid-cols-6 gap-6 px-5 py-3.5 ">
+            <div className=" font-Matter font-medium grid grid-cols-5 gap-6 px-5 py-3.5 ">
               <div>S.No</div>
               <div>Name</div>
               <div>Email</div>
-              <div>Brand Name</div>
+
               <div>Phone Number</div>
               <div>Date</div>
             </div>
             {data?.recentinfluencers?.map((brand, idx) => (
               <div
                 className={clsx(
-                  "  grid grid-cols-6 font-Matter gap-6 px-5 py-3.5 ",
+                  "  grid grid-cols-5 font-Matter gap-6 px-5 py-3.5 ",
                   idx % 2 == 0 ? "bg-[#F9FAFB]" : " bg-white "
                 )}
               >
@@ -103,13 +102,14 @@ const Dashboard = () => {
                 <div className=" w-full truncate  lowercase">
                   {brand?.email}
                 </div>
-                <div>{brand?.brand}</div>
+
                 <div>{brand?.phone}</div>
                 <div>{brand?.createdAt}</div>
               </div>
             ))}
           </div>
         </div>
+        <SingleBrand />
       </Padding>
     </div>
   );
