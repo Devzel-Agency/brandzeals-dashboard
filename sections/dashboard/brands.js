@@ -95,7 +95,7 @@ const Brands = () => {
                 </div>
                 <div className=" flex gap-4 text-[1.1rem] ">
                   <div className=" font-Satoshi font-medium text-[#606061] ">
-                    Description
+                    Description :
                   </div>
                   <div className=" font-Matter font-medium   ">
                     {brand.about}
@@ -103,16 +103,13 @@ const Brands = () => {
                 </div>
                 <div className="  flex flex-col gap-4 text-[1.1rem] ">
                   <div className=" font-Satoshi font-medium text-[#606061] ">
-                   Requested Platforms :
+                    Requested Platforms :
                   </div>
                   <div className="   grid-cols-3 grid gap-4 font-Matter font-medium   ">
                     {brand.socials.map((img) => (
-                      <div className=" h-full w-full flex justify-center items-center">
-                      <img
-                        src={`/images/${img}.svg`}
-                        alt=""
-                        srcset=""
-                      />
+                      <div className=" h-full w-full flex gap-1 flex-col justify-center items-center">
+                        <img src={`/images/${img}.svg`} alt="" srcset="" />
+                        <div className=" text-[0.8rem] ">{img}</div>
                       </div>
                     ))}
                   </div>
