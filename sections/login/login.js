@@ -2,21 +2,16 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Loginimg from "../../public/images/signup.jpg";
-
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-
 import clsx from "clsx";
 import Eye from "@/public/icons/eye";
 import Eyeslash from "@/public/icons/eyeslash";
 import { ToastAction } from "@/components/ui/toast";
-
 import userlogin from "@/api/loginuser";
 import getToken from "@/api/getToken";
-
 import Pageload from "@/components/pageload";
 import { BASE_URL } from "@/api/variables";
-
 import { useUser } from "@/redux/usercontext";
 import Logo from "@/public/icons/logo";
 import { useToast } from "@/hooks/use-toast";

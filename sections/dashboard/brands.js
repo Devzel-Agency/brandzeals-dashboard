@@ -48,7 +48,7 @@ const Brands = () => {
                   {brand?.email}
                 </div>
                 <div>{brand?.phone}</div>
-                <div>{brand?.createdAt}</div>
+                <div>{convertTimestampToDate(brand?.updatedAt)}</div>
               </div>
             </SheetTrigger>
             <SheetContent className=" p-6 py-10 z-[5000000000000]">
