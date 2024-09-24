@@ -220,7 +220,7 @@ const Login = () => {
             >
               <div className={clsx("", loading ? "hidden" : "")}>Continue</div>
               <div className={clsx("", loading ? "" : "hidden")}>
-                <div className=" loader   " />
+                <div className=" loader " />
               </div>
             </div>
           </div>
